@@ -10,3 +10,4 @@
       ```npm install -g ts-node```
 
 3. Por fim, execute o arquivo .ts desejado!
+      exemplo: ```ts-node ".\LOCAL.TS" ```

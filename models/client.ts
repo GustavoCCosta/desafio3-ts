@@ -1,20 +1,17 @@
 import IUser from "./iuser";
+import { Person } from "./person";
 
-export class Client implements IUser {
+export class Client extends Person implements IUser  {
 
-    private _name: String;
-    constructor() {
-        this._name = "";
-    }
-
-    public get name() : String {
-        return this._name;
+    constructor(name: string, cpf: string, phone: string) {
+        super(name, cpf, phone);
     }
     
-    public set name(v: String) {
-        this._name = v;
-    }
-
+    /**
+     * Implements IUser auth
+     * 
+     * @returns True
+     */
     public auth(): boolean {
         return true;
     }
