@@ -1,3 +1,3 @@
 export default interface IUser {
-    auth(): boolean;
+    authenticate(): Boolean;
 }
