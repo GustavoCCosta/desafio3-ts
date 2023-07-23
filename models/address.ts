@@ -23,52 +23,57 @@ export class Address {
     }
 
     // Getters
-    get cep(): String {
+    public get cep(): String {
         return this._cep;
     }
 
-    get street(): String {
+    public get street(): String {
         return this._street;
     }
 
-    get number(): String {
+    public get number(): String {
         return this._number;
     }
 
-    get complement(): String {
+    public get complement(): String {
         return this._complement;
     }
 
-    get city(): String {
+    public get city(): String {
         return this._city;
     }
 
-    get uf(): String {
+    public get uf(): String {
         return this._uf;
     }
 
     // Setters
-    set cep(value: String) {
+    public set cep(value: String) {
         this._cep = value;
     }
 
-    set street(value: String) {
+    public set street(value: String) {
         this._street = value;
     }
 
-    set number(value: String) {
+    public set number(value: String) {
         this._number = value;
     }
 
-    set complement(value: String) {
+    public set complement(value: String) {
         this._complement = value;
     }
 
-    set city(value: String) {
+    public set city(value: String) {
         this._city = value;
     }
 
-    set uf(value: String) {
+    public set uf(value: String) {
         this._uf = value;
+    }
+
+    //@overrider
+    public toString(): String{
+        return this._city;
     }
 }
