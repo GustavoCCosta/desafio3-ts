@@ -72,16 +72,15 @@ export class Address {
         this._uf = value;
     }
 
-    //@overrider
-    public toString(): String{
-        var complete:String="Endereço: \n"+
-                            "CEP: "+this._cep+"\n"+
-                            "Rua: "+this._street+"\n"+
-                            "Estado: "+this._uf+"\n"+
-                            "Cidade: "+this._city+"\n"+
-                            "Estado: "+this._complement+"\n"+
-                            "Estado: "+this.number+"\n";
-                            
+
+    public toString(): String {
+        var complete: String = "Endereço: \n" +
+            "CEP: " + this._cep + "\n" +
+            "Rua: " + this._street + "\n" +
+            "Estado: " + this._uf + "\n" +
+            "Cidade: " + this._city + "\n" +
+            "Complemento: " + this._complement + "\n" +
+            "Numero: " + this.number + "\n";
         return complete;
     }
 }

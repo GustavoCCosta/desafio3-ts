@@ -1,8 +1,6 @@
 import { Employee } from "./models/employee";
 import { JobTitle } from "./models/jobtitle";
 
-import * as fs from 'fs';
-
 var name = "José";
 var cpf = "987";
 var phone = "(82)91111-1111";

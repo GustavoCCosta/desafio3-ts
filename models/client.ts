@@ -5,7 +5,7 @@ import { Address } from "./address";
 export class Client extends Person implements IUser  {
     private _vip: Boolean;
     private _addresses: Address[];
-
+    
     constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[]) {
         super(name, cpf, phone);
         this._vip = vip;
@@ -38,5 +38,16 @@ export class Client extends Person implements IUser  {
      */
     public authenticate(): Boolean {
         return new Boolean(true);
+    }
+
+    //@override
+    public toString(): String{
+        var complete:String="Cliente: \n"+
+                            "Nome: "+this.name+"\n"+
+                            "CPF: "+this.cpf+"\n"+
+                            "Telefone: "+this.phone+"\n"+
+                            "VIP: "+this._vip+"\n"+
+                            "Endereços: "+this.listAddresses()+"\n";
+        return complete;
     }
 }
