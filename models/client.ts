@@ -4,12 +4,12 @@ import { Address } from "./address";
 
 export class Client extends Person implements IUser  {
     private _vip: Boolean;
-    public _addresses: Address[];
+    private _addresses: Address[];
 
-    constructor(name: String, cpf: String, phone: String, vip: Boolean) {
+    constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[]) {
         super(name, cpf, phone);
         this._vip = vip;
-        this._addresses = [];
+        this._addresses = adresses;
     }
 
     // Getters
@@ -17,8 +17,8 @@ export class Client extends Person implements IUser  {
         return this._vip;
     }
 
-    public get addresses(): Address[]{
-        return this._addresses
+    public listAddresses(): String{
+        return this._addresses.toString();
     }
 
     // Setters

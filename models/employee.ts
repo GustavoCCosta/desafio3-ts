@@ -4,12 +4,12 @@ import { Person } from "./person";
 
 export class Employee extends Person implements IUser {
     private _salary: number;
-    private _jobs: JobTitle[];
+    private _jobtitles: JobTitle[];
 
-    constructor(name: String, cpf: String, phone: String, salary: number, jobs: JobTitle[]) {
+    constructor(name: String, cpf: String, phone: String, salary: number, _jobtitles: JobTitle[]) {
         super(name, cpf, phone);
         this._salary = salary;
-        this._jobs = jobs;
+        this._jobtitles = _jobtitles;
     }
 
     /**
@@ -25,8 +25,8 @@ export class Employee extends Person implements IUser {
     public get salary(): number{
         return this._salary;
     }
-    public get jobs(): JobTitle[]{
-        return this._jobs;
+    public get jobtitles(): String{
+        return this._jobtitles.toString();
     }
 
     // Setters
@@ -35,6 +35,16 @@ export class Employee extends Person implements IUser {
     }
 
     public addJob(job: JobTitle){
-        this._jobs.push(job);
+        this._jobtitles.push(job);
+    }
+
+    public toString(): String{
+        var complete:String="Funcionário: \n"+
+                            "Nome: "+this.name+"\n"+
+                            "CPF: "+this.cpf+"\n"+
+                            "Telefone: "+this.phone+"\n"+
+                            "Salario: "+this._salary+"\n"+
+                            "Cargos: "+this._jobtitles.toString()+"\n";
+        return complete;
     }
 }

@@ -74,6 +74,14 @@ export class Address {
 
     //@overrider
     public toString(): String{
-        return this._city;
+        var complete:String="Endereço: \n"+
+                            "CEP: "+this._cep+"\n"+
+                            "Rua: "+this._street+"\n"+
+                            "Estado: "+this._uf+"\n"+
+                            "Cidade: "+this._city+"\n"+
+                            "Estado: "+this._complement+"\n"+
+                            "Estado: "+this.number+"\n";
+                            
+        return complete;
     }
 }
