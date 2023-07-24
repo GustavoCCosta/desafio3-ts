@@ -1,4 +1,7 @@
-# Desafio número 3 para o iUUL
+# Desenvolvimento de aplicação OO utilizando Typescript
+# Descrição:
+      Implementação de um sistema simples, onde se é possível criar usuários e contas associadas a cada usuário.
+      Ainda também, realizar operações de débido, crédito e transferência.
 # Tecnologias a ser utilizada
 - TypeScript
 
