@@ -15,4 +15,10 @@ enderecos.push(endereco);
 var caccount: CurrentAccount = new CurrentAccount("25987",900);
 
 var cliente: Client = new Client(name,cpf,phone,true,enderecos,caccount);
-console.log(cliente.listAddresses());
+
+console.log("Saldo: "+cliente.caccount.calculateBalance());
+for (let index = 0; index < 3; index++) {
+    cliente.caccount.deposit(100);
+}
+cliente.caccount.withdrawn(50);
+console.log("Saldo: "+cliente.caccount.calculateBalance());

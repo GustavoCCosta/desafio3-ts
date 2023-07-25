@@ -1,36 +1,60 @@
 import IUser from "./iuser";
 import { Person } from "./person";
 import { Address } from "./address";
+import { CurrentAccount } from "./currentaccount";
 
-export class Client extends Person implements IUser  {
+export class Client extends Person implements IUser {
     private _vip: Boolean;
     private _addresses: Address[];
-    
-    constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[]) {
+    private _caccount: CurrentAccount;
+
+    constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[], caccount: CurrentAccount) {
         super(name, cpf, phone);
         this._vip = vip;
         this._addresses = adresses;
+        this._caccount = caccount;
     }
 
     // Getters
-    public get vip() : Boolean {
+    public get vip(): Boolean {
         return this._vip;
     }
 
-    public listAddresses(): String{
+    public listAddresses(): String {
         return this._addresses.toString();
     }
 
+    public get caccount() : CurrentAccount {
+        return this._caccount
+    }
+    
+
+    // public listCAccounts(): String{
+    //     return this._caccounts.toString();
+    // }
+
+    // public caccountByNumber(str: String): any{
+    //     this._caccounts.forEach(account => {
+    //         if(account.number == str){
+    //             return account;
+    //         }
+    //     });
+    //     return ;
+    // }
+
     // Setters
-    public set vip(vip: Boolean){
+    public set vip(vip: Boolean) {
         this._vip = vip;
     }
-    
-    public addAddress(address: Address){
+
+    public addAddress(address: Address) {
         this._addresses.push(address);
     }
-    
-    
+
+    public set caccount(v: CurrentAccount){
+        this._caccount = v;
+    }
+
     /**
      * Implements IUser auth
      * 
@@ -41,13 +65,14 @@ export class Client extends Person implements IUser  {
     }
 
     //@override
-    public toString(): String{
-        var complete:String="Cliente: \n"+
-                            "Nome: "+this.name+"\n"+
-                            "CPF: "+this.cpf+"\n"+
-                            "Telefone: "+this.phone+"\n"+
-                            "VIP: "+this._vip+"\n"+
-                            "Endereços: "+this.listAddresses()+"\n";
+    public toString(): String {
+        var complete: String = "Cliente: \n" +
+            "Nome: " + this.name + "\n" +
+            "CPF: " + this.cpf + "\n" +
+            "Telefone: " + this.phone + "\n" +
+            "VIP: " + this._vip + "\n" +
+            "Endereços: " + this.listAddresses() + "\n" +
+            "Conta Corrente: " + this._caccount.toString() + "\n";
         return complete;
     }
 }
