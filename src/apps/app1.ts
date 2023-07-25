@@ -1,5 +1,5 @@
-import { Employee } from "./models/employee";
-import { JobTitle } from "./models/jobtitle";
+import { Employee } from "../models/employee";
+import { JobTitle } from "../models/jobtitle";
 
 var name = "José";
 var cpf = "987";
