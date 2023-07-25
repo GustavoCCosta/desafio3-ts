@@ -28,16 +28,17 @@ export abstract class Account{
     PRIMERO SUBTRAI DEBIDO DO BALANCO, SE BALANCO MENOR QUE 0, ENTAO
     BALANCO SUBTRAI LIMITE, SE LIMITE MENOR QUE 0, ENTAO INVALIDA OP.
     */
-    public withdrawn(v: number){
+    public withdrawn(v: number): Boolean{
         if((this._balance + this._limit - v) < 0) {
-            console.log("Saque de "+v+" NÃO efetuado por falta de saldo!");
-            return;
+            console.log("Saque de "+v+" NÃO efetuado por falta de saldo e limite!");
+            return false;
         }
         this._balance -= v;
         const date: Date = new Date();
         var debit: Debit = new Debit(v,date);
         this._debitsOP.push(debit);
         console.log("Saque de "+v+" efetuado");
+        return true;
     }
 
     // Getters

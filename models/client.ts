@@ -2,13 +2,14 @@ import IUser from "./iuser";
 import { Person } from "./person";
 import { Address } from "./address";
 import { CurrentAccount } from "./currentaccount";
+import { SavingAccount } from "./savingsaccount";
 
 export class Client extends Person implements IUser {
     private _vip: Boolean;
     private _addresses: Address[];
-    private _caccount: CurrentAccount;
+    private _caccount: CurrentAccount|SavingAccount;
 
-    constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[], caccount: CurrentAccount) {
+    constructor(name: String, cpf: String, phone: String, vip: Boolean, adresses: Address[], caccount: CurrentAccount|SavingAccount) {
         super(name, cpf, phone);
         this._vip = vip;
         this._addresses = adresses;
@@ -24,7 +25,7 @@ export class Client extends Person implements IUser {
         return this._addresses.toString();
     }
 
-    public get caccount() : CurrentAccount {
+    public get caccount() : CurrentAccount|SavingAccount {
         return this._caccount
     }
     
@@ -51,7 +52,7 @@ export class Client extends Person implements IUser {
         this._addresses.push(address);
     }
 
-    public set caccount(v: CurrentAccount){
+    public set caccount(v: CurrentAccount|SavingAccount){
         this._caccount = v;
     }
 
