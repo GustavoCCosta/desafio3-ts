@@ -29,20 +29,6 @@ export class Client extends Person implements IUser {
         return this._caccount
     }
     
-
-    // public listCAccounts(): String{
-    //     return this._caccounts.toString();
-    // }
-
-    // public caccountByNumber(str: String): any{
-    //     this._caccounts.forEach(account => {
-    //         if(account.number == str){
-    //             return account;
-    //         }
-    //     });
-    //     return ;
-    // }
-
     // Setters
     public set vip(vip: Boolean) {
         this._vip = vip;

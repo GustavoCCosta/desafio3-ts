@@ -6,7 +6,7 @@ export class CurrentAccount extends Account{
         super(number,limit);
     }
 
-    //@Overrider
+    //@Override
     public toString(): String{
         return "Numero: "+this.number+"\n"+"Saldo: "+this.balance+"\n";
     }

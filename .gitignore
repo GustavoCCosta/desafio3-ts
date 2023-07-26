@@ -9,3 +9,4 @@ yarn-error.log*
 
 resumo.txt
 test.ts
+/src/services

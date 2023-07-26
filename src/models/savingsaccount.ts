@@ -5,7 +5,7 @@ export class SavingAccount extends Account{
         super(number,0);
     }
 
-    //@Overrider
+    //@Override
     public toString(): String{
         return "Numero: "+this.number+"\n"+"Saldo: "+this.balance+"\n";
     }

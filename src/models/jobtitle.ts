@@ -17,7 +17,7 @@ export class JobTitle{
         this._name = name;
     }
 
-    //@overrider
+    //@override
     public toString(): String{
         return this._name;
     }
